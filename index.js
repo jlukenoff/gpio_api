@@ -1,8 +1,9 @@
 const express = require('express');
-const path = require('path');
+const jsonParser = require('body-parser').json();
 
 const app = express();
 
+app.use(jsonParser);
 app.use(require('./routes'));
 
 app.get('/', (req, res) => {
